@@ -6,6 +6,10 @@ Created on Mon Dec 30 22:53:26 2019
 """
 
 import mysql.connector
+import json
+
+with open('database.json') as json_data_file:
+    database_config = json.load(json_data_file)
 
 def reverse_first_and_last_name(name):
     names = name.split(',')
@@ -14,7 +18,7 @@ def reverse_first_and_last_name(name):
     else:
         return names[0].strip()
 
-connection = mysql.connector.connect(host='localhost',user='root',passwd='mysql',database='anime_schema')
+connection = mysql.connector.connect(host=database_config['host'],user=database_config['user'],passwd=database_config['password'],database=database_config['database'])
 
 cursor = connection.cursor()
 

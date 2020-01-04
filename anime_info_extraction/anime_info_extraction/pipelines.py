@@ -6,14 +6,18 @@
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
 import mysql.connector
+import json
+
+with open('../../database.json') as json_data_file:
+    database_config = json.load(json_data_file)
 class AnimeInfoExtractionPipeline(object):
     def __init__(self):
         self._create_connection()
     def _create_connection(self):
-        host='localhost'
-        user='root'
-        password='mysql'
-        db='anime_schema'
+        host=database_config['host']
+        user=database_config['user']
+        password=database_config['password']
+        db=database_config['database']
         self.connection = mysql.connector.connect(host=host,user=user,passwd=password,database=db)
         self.cursor = self.connection.cursor()
     
