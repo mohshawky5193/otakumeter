@@ -15,6 +15,11 @@ def homepage():
 @app.route('/about')
 def about():
     return render_template("about.html")
-
+@app.route('/howto')
+def how_to_play():
+    return render_template("how-to-play.html")
+@app.route('/quiz')
+def quiz():
+    return "quiz"
 if __name__ == "__main__":
     app.run()

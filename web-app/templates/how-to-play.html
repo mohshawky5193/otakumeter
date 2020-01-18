@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+        <h2>How to play?</h2>
+        <p>Otakumeter is a simple quiz game where you are given an <strong>Anime Character Name</strong> and you have to guess whether the name given is <span class="text-success">real</span> or <span class="text-danger">fake</span></p>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <a class="start-menu"  href="{{url_for('homepage')}}">Back</a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <a class="start-menu"  href="{{url_for('quiz')}}">Start</a>
+            </div>
+        </div>
+</div>
+{% endblock %}
