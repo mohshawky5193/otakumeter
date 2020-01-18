@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Otakumeter</title>
+        <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{url_for('static',filename='css/otakumeter.css')}}" rel="stylesheet" type="text/css"/>
+        <link href="{{url_for('static',filename='otaku.ico')}}" rel="shortcut icon">
+    </head>
+    <body>
+            <nav class="navbar navbar-dark bg-dark">
+                <a class="navbar-brand" href="{{url_for('homepage')}}">Otakumeter</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="{{url_for('about')}}">About me</a>
+                    </li>
+                </ul>
+            </nav>
+                <div class="body">
+                        {%block body%}
+                        {%endblock%}
+                </div>
+    </body>
+</html>
