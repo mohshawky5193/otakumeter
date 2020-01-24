@@ -1,4 +1,16 @@
 {%extends "layout.html" %}
 {%block body%}
-<p>About us page</p>
+<div class="container-fluid">
+    <img id="profile-image" src="{{url_for('static',filename='images/profile.jpg')}}"/>
+    <h2 id="job-title">Associate Software Developer</h2>
+    <h3>For more Info</h3>
+    <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <a class="fab fa-github" href="https://github.com/mohshawky5193"></a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/mohamed-shawky-5b6897a9/"></a>
+            </div>
+    </div>
+</div>
 {%endblock%}
