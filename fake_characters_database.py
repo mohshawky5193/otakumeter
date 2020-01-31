@@ -23,3 +23,4 @@ cursor.executemany("""
                INSERT INTO FAKE_ANIME_CHARACTER(NAME) VALUES (%s)
                """,fake_anime_characters)
 connection.commit()
+connection.close()

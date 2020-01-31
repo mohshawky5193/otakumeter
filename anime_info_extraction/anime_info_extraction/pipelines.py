@@ -39,4 +39,5 @@ class AnimeInfoExtractionPipeline(object):
             self.connection.rollback()
     def process_item(self, item, spider):
         self._insert_item(item)
+		self.connection.close()
         return item
