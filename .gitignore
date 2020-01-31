@@ -1,2 +1,3 @@
 database.json
 anime_info_extraction/scrapy.cfg
+**/__pycache__
