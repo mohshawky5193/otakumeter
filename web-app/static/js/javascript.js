@@ -7,6 +7,7 @@ $(document).ready(function() {
             $('#character').html(questions[score][0]);
         }else{
             $('#character').html('Game Over');
+            $('.ans').css('display','none');
         }
       }
     $('a.real').click(function() {
@@ -24,6 +25,7 @@ $(document).ready(function() {
         checkIfCharacterIs(false,score);
     })
 
+    
     $.ajax({
         type: 'GET',
         url: '/get-characters',
@@ -33,7 +35,8 @@ $(document).ready(function() {
            $('#character').html(questions[0][0]);
         },
         error:function(error){
-            console.log(error);
+           $('.progress').css('display','none');
+           $('#character').html("An error occured please try again");
         }
     })
 });
