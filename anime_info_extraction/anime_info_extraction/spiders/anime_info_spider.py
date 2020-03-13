@@ -19,4 +19,5 @@ class AnimeInfoSpider(scrapy.Spider):
         item['anime_id']=int(response.url.split('/')[4])
         item['anime_name']=response.css('h1 span::text').get()
         item['character_names']=response.css("td >a[href*='character']::text").extract()
+        item['id']=response.css("td >a[href*='character']::attr(href)").extract()
         yield item

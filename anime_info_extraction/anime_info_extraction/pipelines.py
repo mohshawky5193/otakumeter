@@ -29,15 +29,16 @@ class AnimeInfoExtractionPipeline(object):
                                 """,(item['anime_id'],item['anime_name']))
             self.connection.commit()
             if(len(item['character_names']) > 0):
-               for character in item['character_names']:
+               for i,character in enumerate(item['character_names']):
+                   id = int(item['id'][i].split('/')[4])
                    self.cursor.execute("""
-                                INSERT INTO ANIME_CHARACTER (NAME,ANIME_ID) VALUES(%s,%s)
-                                """,(character,item['anime_id']))
+                                INSERT INTO ANIME_CHARACTER (ID,NAME,ANIME_ID) VALUES(%s,%s,%s)
+                                """,(id,character,item['anime_id']))
                    self.connection.commit()
         except mysql.connector.Error as err:
             print('Database Error {}'.format(err))
             self.connection.rollback()
     def process_item(self, item, spider):
         self._insert_item(item)
-		self.connection.close()
+        #self.connection.close()
         return item

@@ -10,6 +10,7 @@ import scrapy
 
 class AnimeInfoExtractionItem(scrapy.Item):
     # define the fields for your item here like:
+    id = scrapy.Field()
     anime_name = scrapy.Field()
     anime_id = scrapy.Field()
     character_names = scrapy.Field()
