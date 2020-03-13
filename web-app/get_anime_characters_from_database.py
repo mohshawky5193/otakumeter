@@ -21,10 +21,10 @@ with open('../database.json') as json_data_file:
 def get_anime_characters_for_quiz():
     connection = mysql.connector.connect(host=database_config['host'],user=database_config['user'],passwd=database_config['password'],database=database_config['database'])
     cursor = connection.cursor()
-    cursor.execute("SELECT DISTINCT NAME from ANIME_CHARACTER")
+    cursor.execute("select name,character_image_url from anime_character")
     characters = cursor.fetchall()
-    real_anime_characters=[(reverse_first_and_last_name(character[0]),True) for character in characters]
-    cursor.execute("SELECT NAME from FAKE_ANIME_CHARACTER")
+    real_anime_characters=[(reverse_first_and_last_name(character[0]),True,character[1]) for character in characters]
+    cursor.execute("SELECT name from fake_anime_character")
     fake_characters = cursor.fetchall()
     fake_anime_characters=[(character[0],False) for character in fake_characters]
     

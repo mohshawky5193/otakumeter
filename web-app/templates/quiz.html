@@ -7,13 +7,22 @@
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
             </div>
         </div>
+        <img id="image-show" src="{{url_for('static',filename='images/question_mark.png')}}"/>
         <h3 id="character"></h3>
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                 <a class="ans fake" href="javascript:void(0)">Fake <span class="fa fa-times"></span></a>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                    <a class="ans real"  href="javascript:void(0)">Real <span class="fas fa-check"></span></a>
+                <a class="ans real"  href="javascript:void(0)">Real <span class="fas fa-check"></span></a>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <a class="next-retry next" href="javascript:void(0)">Next <span class="fas fa-arrow-right"></span></a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <a class="next-retry retry"  href="javascript:void(0)">Retry <span class="fa fa-refresh"></span></a>
                 </div>
         </div>
 </div>
